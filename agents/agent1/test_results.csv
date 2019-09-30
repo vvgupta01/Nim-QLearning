@@ -1,0 +1,31 @@
+TRIAL,AGENT 1,AGENT 2,WINS 1,WINS 2,TIME
+1,Expert,Expert,100000,100000,33.9
+2,Expert,Expert,100000,100000,39.03
+3,Expert,Expert,100000,100000,39.85
+4,Expert,Expert,100000,100000,39.82
+5,Expert,Expert,100000,100000,40.14
+6,Expert,Expert,100000,100000,38.59
+7,Expert,Expert,100000,100000,38.96
+8,Expert,Expert,100000,100000,39.21
+9,Expert,Expert,100000,100000,39.31
+10,Expert,Expert,100000,100000,38.62
+1,Expert,Random,199712,288,32.75
+2,Expert,Random,199683,317,32.08
+3,Expert,Random,199668,332,31.96
+4,Expert,Random,199716,284,33.26
+5,Expert,Random,199706,294,32.28
+6,Expert,Random,199684,316,30.03
+7,Expert,Random,199685,315,30.23
+8,Expert,Random,199658,342,30.32
+9,Expert,Random,199683,317,33.54
+10,Expert,Random,199691,309,34.11
+1,Expert,"QLearning [1,1]",100000,100000,89.15
+2,Expert,"QLearning [1,1]",100000,100000,89.36
+3,Expert,"QLearning [1,1]",100000,100000,80.17
+4,Expert,"QLearning [1,1]",100000,100000,83.2
+5,Expert,"QLearning [1,1]",100000,100000,85.95
+6,Expert,"QLearning [1,1]",100000,100000,90.74
+7,Expert,"QLearning [1,1]",100000,100000,89.04
+8,Expert,"QLearning [1,1]",100000,100000,73.93
+9,Expert,"QLearning [1,1]",100000,100000,89.69
+10,Expert,"QLearning [1,1]",100000,100000,62.03
