@@ -94,7 +94,7 @@ def test_agents(agent1, agent2, board, episodes, trials):
     return df
 
 
-def display_results(q_learning):
+def display_results(q_learning, agent_path):
     print()
     print(q_learning.results)
 
@@ -121,6 +121,8 @@ def display_results(q_learning):
     plt.xlabel('AGENT TYPE', fontsize=10)
     plt.ylabel('AVG PERCENTAGE OF WINS (%)', fontsize=10)
     plt.legend(loc='lower left', fontsize=8)
+
+    plt.savefig(agent_path + '/results_graph.png')
     plt.show()
 
 

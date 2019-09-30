@@ -41,6 +41,11 @@ def main():
             print('INVALID ACTION')
 
         while q_learning.is_trained():
+            if agent_path == '':
+                dirs = os.listdir('agents')
+                agent_path = 'agents/agent{}'.format(len(dirs) + 1)
+                os.mkdir(agent_path)
+
             print('\nAGENT:', q_learning.get_name())
             if q_learning.results.empty:
                 print('TEST AGENT[T] PLAY AGENT[P] QUIT[Q]')
@@ -53,17 +58,12 @@ def main():
                 results = Utils.full_test(q_learning, board, episodes, trials)
                 q_learning.set_results(results)
             elif action == 'R' and not q_learning.results.empty:
-                Utils.display_results(q_learning)
+                Utils.display_results(q_learning, agent_path)
             elif action == 'P':
                 Utils.play(q_learning, board)
             elif action == 'Q':
-                dirs = os.listdir('agents')
-                if agent_path == '':
-                    agent_path = 'agents/agent{}'.format(len(dirs) + 1)
-                    os.mkdir(agent_path)
                 q_learning.save(agent_path)
                 print('SUCCESSFULLY SAVED AGENT')
-
                 q_learning = QLearningAgent()
                 action = ''
             else:

@@ -1,4 +1,0 @@
-TRIAL,AGENT 1,AGENT 2,WINS 1,WINS 2,TIME
-1,Expert,Expert,50000,50000,4.45
-1,Expert,Random,99585,415,3.66
-1,Expert,"QLearning [1,1]",50000,50000,7.22
