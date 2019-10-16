@@ -1,9 +1,8 @@
-import os
 import sys
 import time
 import pickle
 import pandas as pd
-from Agent import Agent
+from src.Agent import Agent
 
 
 class QLearningAgent(Agent):
@@ -16,16 +15,18 @@ class QLearningAgent(Agent):
         self.results = pd.DataFrame()
 
     def load(self, agent_path):
-        config_path = agent_path + '/agent_config.txt'
+        config_path = agent_path + '/agent_config.pickle'
         with open(config_path, 'rb') as file:
             self.parameters = pickle.load(file)
 
         results_path = agent_path + '/test_results.csv'
-        if os.path.exists(results_path):
+        try:
             self.results = pd.read_csv(results_path)
+        except (pd.errors.EmptyDataError, FileNotFoundError):
+            pass
 
     def save(self, agent_path):
-        config_path = agent_path + '/agent_config.txt'
+        config_path = agent_path + '/agent_config.pickle'
         with open(config_path, 'wb') as file:
             pickle.dump(self.parameters, file)
 
@@ -65,8 +66,8 @@ class QLearningAgent(Agent):
             sys.stdout.write('[%-20s] %d%%' % ('=' * int(progress / 5), int(progress)))
             sys.stdout.flush()
         end_time = time.time()
-        total_time = round(end_time - start_time, 2)
-        print('\nSUCCESSFULLY TRAINED AGENT IN {}s'.format(total_time))
+        run_time = round(end_time - start_time, 2)
+        print('\nRUN TIME: {}s'.format(run_time))
 
     def move(self, board, turn):
         pile = Agent.random_pile(board)
@@ -143,7 +144,7 @@ class QLearningAgent(Agent):
     def is_trained(self):
         return len(self.parameters['Q_VALUES']) > 0
 
-    def get_name(self):
+    def get_params(self):
         if not self.is_trained():
             return 'NO TRAINED AGENT'
         else:

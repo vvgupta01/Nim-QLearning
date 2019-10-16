@@ -1,5 +1,5 @@
 import random
-from Agent import Agent
+from src.Agent import Agent
 
 
 class ExpertAgent(Agent):

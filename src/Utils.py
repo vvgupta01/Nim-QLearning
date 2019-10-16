@@ -3,9 +3,9 @@ import time
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from Agent import Agent
-from ExpertAgent import ExpertAgent
-from RandomAgent import RandomAgent
+from src.Agent import Agent
+from src.ExpertAgent import ExpertAgent
+from src.RandomAgent import RandomAgent
 
 
 def full_test(q_learning, board, episodes, trials):
@@ -81,20 +81,20 @@ def test_agents(agent1, agent2, board, episodes, trials):
                                                   '=' * int(progress / 5), int(progress)))
             sys.stdout.flush()
         end_time = time.time()
-        total_time = round(end_time - start_time, 2)
+        run_time = round(end_time - start_time, 2)
         results['AGENT 1'].append(str(agent1))
         results['AGENT 2'].append(str(agent2))
         results['WINS 1'].append(episodes - agent1.losses)
         results['WINS 2'].append(episodes - agent2.losses)
-        results['TIME'].append(total_time)
-    print('\nTOTAL TIME: {}s'.format(sum(results['TIME'])))
+        results['TIME'].append(run_time)
+    print('\nRUN TIME: {}s'.format(sum(results['TIME'])))
     print('AVG WINS:\t[{}]: {}\t[{}]: {}'.format(agent1, sum(results['WINS 1']) / trials,
                                                  agent2, sum(results['WINS 2']) / trials))
     df = pd.DataFrame(results)
     return df
 
 
-def display_results(q_learning, agent_path):
+def plot_results(q_learning, agent_path):
     print()
     print(q_learning.results)
 
