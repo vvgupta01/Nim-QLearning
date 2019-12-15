@@ -1,7 +1,7 @@
 This program was created in IntelliJ PyCharm 2019.2.3 and compiled with Python 3.6.
 
 ### Overview & Summary
-This program tests the effectiveness of varying paramaterized instances of a Q-learning algorithm against an expert algorithm in the seemingly simple game of Nim. 
+This program tests the effectiveness of varying paramaterized instances of a Q-learning algorithm against an expert algorithm in the game of Nim. 
 
 #### Nim
 Nim is a two-player game in which players take alternating turns removing objects from multiple piles. A player can remove any number of objects during their turn, but only from a single pile. In the misère variant of Nim, the losing condition is to remove the last object. The game of Nim is completely solved, meaning there exists an optimal strategy such that the second player to move can always win. 
